@@ -42,3 +42,14 @@ html {
 a:link {
   color: black;
 }
+
+footer {
+  position: fixed;
+  bottom:0px;
+  right:0px;
+}
+
+.facebook {
+  height: 16;
+  width: 16;
+}

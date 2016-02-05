@@ -1,0 +1,27 @@
+header {
+
+}
+
+aside {
+  position: fixed;
+  float: left;
+}
+
+main {
+  position: absolute;
+  left: 300px;
+  right: 300px;
+}
+
+main > h1 {
+  text-align: center;
+  margin-right: 50px;
+}
+
+main > h2 {
+  text-align: center;
+}
+
+aside table tr td {
+  width: 250px;
+}

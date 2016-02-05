@@ -5,12 +5,15 @@ header {
 aside {
   position: fixed;
   float: left;
+  bottom: 0px;
 }
 
 main {
   position: absolute;
   left: 300px;
   right: 300px;
+  border: 2px solid #3399ff;
+  background-color: #e5f2ff;
 }
 
 main > h1 {
@@ -23,5 +26,5 @@ main > h2 {
 }
 
 aside table tr td {
-  width: 250px;
+  width: 225px;
 }

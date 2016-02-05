@@ -63,3 +63,8 @@ footer {
   padding-top: -25px;
   margin-top: 20px;
 }
+
+.message-box {
+  width: 400px;
+  height: 100px;
+}

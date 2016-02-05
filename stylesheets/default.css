@@ -1,7 +1,7 @@
 .image {
   display: block;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: auto;
+  margin-right: auto;
   height: 333px;
   width: 500px;
 }
@@ -14,8 +14,11 @@ table {
 
 td {
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 10px;
   text-align: center;
+  width: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 td a {
@@ -24,4 +27,18 @@ td a {
 
 section {
   text-align: center;
+}
+
+html {
+  font-family: Verdana;
+  color: black;
+}
+
+.current-page {
+  font-weight: bold;
+  color: black;
+}
+
+a:link {
+  color: black;
 }

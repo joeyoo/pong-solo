@@ -13,12 +13,13 @@ table {
 }
 
 td {
-  border: 2px solid black;
+  border: 2px solid #3399ff;
   border-radius: 10px;
   text-align: center;
   width: 100px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #e5f2ff;
 }
 
 td a {
@@ -50,6 +51,15 @@ footer {
 }
 
 .facebook {
-  height: 16;
-  width: 16;
+  height: 32px;
+  width: 32px;
+}
+
+.about-me {
+  margin-left: 300px;
+  margin-right: 300px;
+  background-color: #e5f2ff;
+  border: 2px solid #3399ff;
+  padding-top: -25px;
+  margin-top: 20px;
 }

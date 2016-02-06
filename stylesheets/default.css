@@ -10,20 +10,23 @@ table {
   margin-left: auto;
   margin-right: auto;
   border: none;
+  width: 300px;
 }
 
 td {
-  border: 2px solid #3399ff;
-  border-radius: 10px;
   text-align: center;
   width: 100px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #e5f2ff;
 }
 
 td a {
   text-decoration: none;
+}
+
+th a {
+  text-decoration: none;
+  color: black;
 }
 
 section {
@@ -35,9 +38,10 @@ html {
   color: black;
 }
 
-.current-page {
-  font-weight: bold;
-  color: black;
+header h1 {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom:
 }
 
 a:link {
@@ -67,4 +71,15 @@ footer {
 .message-box {
   width: 400px;
   height: 100px;
+}
+
+th {
+  border: 2px solid #3399ff;
+  background-color: #e5f2ff;
+}
+
+.dropdown {
+  border-left: 1px solid #3399ff;
+  border-right: 1px solid #3399ff;
+  border-bottom: 1px solid #3399ff;
 }

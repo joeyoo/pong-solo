@@ -11,8 +11,8 @@ main {
   top: 343px;
   left: 300px;
   right: 300px;
-  border: 1px solid #ff8080;
-  background-color: #ff9999;
+  border-radius: 20px;
+  background-color: #e5eeff;
 }
 
 main > h1 {

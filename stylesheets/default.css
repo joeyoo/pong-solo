@@ -48,6 +48,10 @@ a:link {
   color: black;
 }
 
+a:visited {
+  color: black;
+}
+
 footer {
   position: fixed;
   bottom:0px;
@@ -62,8 +66,9 @@ footer {
 .about-me {
   margin-left: 300px;
   margin-right: 300px;
-  background-color: #e5f2ff;
-  border: 2px solid #3399ff;
+  background-color: #ff9999;
+  border: 2px solid #ff8080;
+  border-radius: 10px;
   padding-top: -25px;
   margin-top: 20px;
 }
@@ -74,12 +79,14 @@ footer {
 }
 
 th {
-  border: 2px solid #3399ff;
-  background-color: #e5f2ff;
+  border: 2px solid #ff8080;
+  border-radius: 10px;
+  background-color: #ff9999;
 }
 
 .dropdown {
-  border-left: 1px solid #3399ff;
-  border-right: 1px solid #3399ff;
-  border-bottom: 1px solid #3399ff;
+  border-left: 1px solid #ff9999;
+  border-right: 1px solid #ff9999;
+  border-bottom: 1px solid #ff9999;
+  border-radius: 10px;
 }

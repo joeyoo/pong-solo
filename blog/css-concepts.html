@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-    <title>Blog</title>
+    <title>Display: Inline vs. Inline-block</title>
   </head>
   <body>
     <header>
@@ -13,22 +13,29 @@
       <h1>Blog</h1>
     </header>
     <main>
-      <h1>#1- Version Control: Git and Github</h1>
-      <h2>January 24, 2016</h2>
+      <h1>Display: Inline vs. Inline-block</h1>
+      <h2>February 7, 2016</h2>
       <section>
-      <h3>
-        What are Version control, Git, and Github?
-      </h3>
+
+      <h3>The Display Property</h3>
+
         <p>
-        Before version control, you would write your code, save it occasionally, and then save it one last time before closing. But, what if you made a mistake earlier and already saved a number of times? You might have to go through lines and lines of code to be able to fix the problem. Version control addresses this issue by saving your saves and modifications into a log, so you can track them and go back to them. With each save, you create a checkpoint that you can go back to, if needed.
+          In CSS, the <code>display</code> property determines how an element is displayed on a webpage. Like all CSS properties, display properties are each represented by a value. For example, a display value of <code>none</code> hides an element from the page visually and spatially, as if it weren't there. It would be written as: <pre><code>display:none;</code></pre> and would return nothing on the page. The <code>none</code> value is useful in combination with Javascript when you want access to an element but don't want it to take up any space on your website.
         </p>
+
+      <h3>Inline and Block</h3>
+
         <p>
-        Git is the most popular version control system. When a user modifies a file, Git tracks the change and gives the the option to save or "commit." The checkpoint is then stored in a Git "repository," a subfolder that holds the file's checkpoints. The committed change, then, becomes logged and available for revisiting.
+          The two default values of the display property are <code>inline</code> and <code>block</code>, depending on the element type. The <code>inline</code> and <code>block</code> codes deal with how much width an element takes up on the page. The <code>inline</code> value makes it so that each element takes up only the width of its actual size. Elements stick to and follow each other as if they are in a line. When you don't want elements sticking together, you can make the display value <code>block</code>, which will occupy all the available width around the element, essentially causing a line break.
         </p>
+
+      <h3>Inline vs. Inline-block</h3>
+
         <p>
-        Version control shines, however, when collaboration is involved, when Github comes into play. Github is a website that acts as a remote repository. When multiple people want to work on one file, they can each get an exact copy of the "master" version that is stored in Github. Users branch their work from the Github master branch and "push" their local commits to Github when they are done with their work. This way, the one master version can remain safe from changes not yet agreed upon.
+          There are drawbacks to both <code>inline</code> and <code>block</code> elements, however. With an <code>inline</code> element, you can't adjust the height or width. You also can't place <code>block</code> elements next to each other because the value causes a line break. In comes the <code>inline-block</code> value, an inline element that acts like a block element. <code>Inline-block</code> recognizes height and width and allows for adjacent block placement. It's a best-of-both worlds situation where you have more freedom to edit the properties of the element. If, however, you don't care about the dimensions and only want to have the elements sit next to each other, you can still use <code>inline</code>
         </p>
-        </section>
+
+      </section>
     </main>
     <aside>
       <table>
@@ -56,7 +63,7 @@
         <thead>
           <tr>
         <th>
-          <a href="../contact_me/contact_me.html">Contact Me</a>
+          <a href="/../contact_me/contact_me.html">Contact Me</a>
         </th>
         </tr>
       </thead>
@@ -72,14 +79,14 @@
         <tbody>
         <tr>
         <td class="dropdown">
-        <a href="git.html">
+        <a href="/blog/git.html">
         Version Control: Git and Github
         </a>
         </td>
         </tr>
         <tr>
         <td class="dropdown">
-       <a href="css-concepts.html">
+       <a href="#">
         Display: Inline vs. Inline-block
         </a>
         </td>

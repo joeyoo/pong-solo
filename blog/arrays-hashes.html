@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-    <title>Display: Inline vs. Inline-block</title>
+    <title>Container Objects: Arrays and Hashes</title>
   </head>
   <body>
     <header>
@@ -13,26 +13,32 @@
       <h1>Blog</h1>
     </header>
     <main>
-      <h1>#2- Display: Inline vs. Inline-block</h1>
-      <h2>February 7, 2016</h2>
+      <h1>#3- Container Objects: Arrays and Hashes</h1>
+      <h2>February 15, 2016</h2>
       <section>
 
-      <h3>The Display Property</h3>
+      <h3>Container Objects</h3>
 
         <p>
-          In CSS, the <code>display</code> property determines how an element is displayed on a webpage. Like all CSS properties, display properties are each represented by a value. For example, a display value of <code>none</code> hides an element from the page visually and spatially, as if it weren't there. It would be written as: <pre><code>display:none;</code></pre> and would return nothing on the page. The <code>none</code> value is useful in combination with Javascript when you want access to an element but don't want it to take up any space on your website.
+        What if we wanted to build a program that would act as a database of information? How would we access the information? Ruby arranges collections of objects with <em>container objects</em>. The two predominant container objects are arrays and hashes.
         </p>
 
-      <h3>Inline and Block</h3>
+      <h3>Arrays</h3>
 
         <p>
-          The two default values of the display property are <code>inline</code> and <code>block</code>, depending on the element type. The <code>inline</code> and <code>block</code> codes deal with how much width an element takes up on the page. The <code>inline</code> value makes it so that each element takes up only the width of its actual size. Elements stick to and follow each other as if they are in a line. When you don't want elements sticking together, you can make the display value <code>block</code>, which will occupy all the available width around the element, essentially causing a line break.
+        Arrays are numerically ordered lists of objects. Starting from the index 0, every added element is stored in order and accessed as such. Arrays can store any object as an indexed element.
         </p>
 
-      <h3>Inline vs. Inline-block</h3>
+      <h3>Hashes</h3>
 
         <p>
-          There are drawbacks to both <code>inline</code> and <code>block</code> elements, however. With an <code>inline</code> element, you can't adjust the height or width. You also can't place <code>block</code> elements next to each other because the value causes a line break. In comes the <code>inline-block</code> value, an inline element that acts like a block element. <code>Inline-block</code> recognizes height and width and allows for adjacent block placement. It's a best-of-both worlds situation where you have more freedom to edit the properties of the element. If, however, you don't care about the dimensions and only want to have the elements sit next to each other, you can still use <code>inline</code>
+        Hashes, like arrays are also ordered lists. However, hashes are indexed by 'keys' to access their values. This relationship is known as a 'key-value pair.' Any object can be used as a key to access a value, which can also be any object.
+        </p>
+
+      <h3>Arrays vs. Hashes</h3>
+
+        <p>
+        Coming back to the question of how we would access the information of a database, when would we use arrays and when would we use hashes? Let's say we want to build a dictionary. If we use an array, each word would have to be stored in numerical order. To access a word, we would have to go through every number until we find the word. In this case, we would want to use a hash. To find out the definition of 'coir' we would just use the key 'coir' to access the value 'fiber from the outer husk of a coconut.' This way is much more efficient than looking through each numbered element of an array. However, let's say we're hosting a race, and we want to write a program that will store in order each person's name that crosses the finish line. Since we are dealing with an ordered list of strings, it would be simpler to use an array than a hash.
         </p>
 
       </section>
@@ -93,8 +99,8 @@
         </tr>
         <tr>
         <td class="dropdown">
-       <a href="#">
-          #3
+       <a href="arrays-hashes.html">
+          Container Objects: Arrays and Hashes
        </a>
       </td>
         </tr>

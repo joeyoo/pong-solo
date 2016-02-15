@@ -1,23 +1,134 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
-    <title>Title title title title</title>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+    <title>Display: Inline vs. Inline-block</title>
   </head>
   <body>
-    <a href="/../index.html">
-      <img src="/../imgs/photo.jpg"/>
-    </a>
-    <table>
-      <table border="1">
-      <tr>
-        <td>
-          <a href="/../experience/experience.html">Experience
-          </a>
+    <header>
+      <a href="../index.html">
+      <img class="image" src="../imgs/photo.png"/>
+      </a>
+      <h1>Blog</h1>
+    </header>
+    <main>
+      <h1>#2- Display: Inline vs. Inline-block</h1>
+      <h2>February 7, 2016</h2>
+      <section>
+
+      <h3>The Display Property</h3>
+
+        <p>
+          In CSS, the <code>display</code> property determines how an element is displayed on a webpage. Like all CSS properties, display properties are each represented by a value. For example, a display value of <code>none</code> hides an element from the page visually and spatially, as if it weren't there. It would be written as: <pre><code>display:none;</code></pre> and would return nothing on the page. The <code>none</code> value is useful in combination with Javascript when you want access to an element but don't want it to take up any space on your website.
+        </p>
+
+      <h3>Inline and Block</h3>
+
+        <p>
+          The two default values of the display property are <code>inline</code> and <code>block</code>, depending on the element type. The <code>inline</code> and <code>block</code> codes deal with how much width an element takes up on the page. The <code>inline</code> value makes it so that each element takes up only the width of its actual size. Elements stick to and follow each other as if they are in a line. When you don't want elements sticking together, you can make the display value <code>block</code>, which will occupy all the available width around the element, essentially causing a line break.
+        </p>
+
+      <h3>Inline vs. Inline-block</h3>
+
+        <p>
+          There are drawbacks to both <code>inline</code> and <code>block</code> elements, however. With an <code>inline</code> element, you can't adjust the height or width. You also can't place <code>block</code> elements next to each other because the value causes a line break. In comes the <code>inline-block</code> value, an inline element that acts like a block element. <code>Inline-block</code> recognizes height and width and allows for adjacent block placement. It's a best-of-both worlds situation where you have more freedom to edit the properties of the element. If, however, you don't care about the dimensions and only want to have the elements sit next to each other, you can still use <code>inline</code>
+        </p>
+
+      </section>
+    </main>
+    <aside>
+      <table>
+          <thead>
+            <tr>
+              <th>
+                <a href="../index.html">About Me</a>
+              </th>
+          </thead>
+          <tbody>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="../about_me/projects.html">Projects</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="../about_me/resume.html">Resume</a>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+        <th>
+          <a href="/../contact_me/contact_me.html">Contact Me</a>
+        </th>
+        </tr>
+      </thead>
+      </table>
+      <table>
+        <thead>
+        <tr>
+        <th>
+          <a href="blog_index.html">Blog</a>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td class="dropdown">
+        <a href="git.html">
+        Version Control: Git and Github
+        </a>
         </td>
-        <td><a href="blog_index.html">Blog</a></td>
-        <td><a href="/../contact_me/contact_me.html">Contact Me</a></td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="css-concepts.html">
+        Display: Inline vs. Inline-block
+        </a>
+        </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="#">
+          #3
+       </a>
+      </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="#">
+        #4
+       </a>
+      </td>
       </tr>
+      <tr>
+        <td class="dropdown">
+       <a href="#">
+        #5
+       </a>
+      </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+        <a href="#">
+        #6
+        </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+       <a href="#">
+        #7
+       </a>
+      </td>
+      </tr>
+    </tbody>
     </table>
+  </aside>
 <body>
   <main>
     <h1>Title title title title</h1>

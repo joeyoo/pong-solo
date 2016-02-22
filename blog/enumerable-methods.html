@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-    <title>Enumerables: The #cycle Method </title>
+    <title>Enumerable: The #cycle Method </title>
   </head>
   <body>
     <header>
@@ -13,20 +13,29 @@
       <h1>Blog</h1>
     </header>
     <main>
-      <h1>#4- Enumerables: The #cycle Method</h1>
+      <h1>#4- Enumerable: The #cycle Method</h1>
       <h2>February 22, 2016</h2>
       <section>
       <h3>
-        The Enumerable Method
+        The Enumerable Module
       </h3>
         <p>
-
+          The <code>Enumerable</code> module provides a set of methods useful to Ruby's collections classes, such as <code>Array</code> and <code>Hash</code>. As a module, Enumerable allows for the use of its methods by any class that has an <code>each</code> method, which proves the class' position as a collection class. The Enumerable module's boundary-ignorant accessibility, therefore, gives users a handy set of tools that work for any Ruby collection object.
         </p>
       <h3>
         The #cycle Method
       </h3>
         <p>
+          <code>cycle</code> is a popular method of the Enumerable module. It iterates a given block of code over each element any specified number of times. If not given a number, it will loop infinitely. For example, <pre><code>a = ['a','b','c']
 
+          a.cycle(2) { |letter| print letter }
+
+          =>abcabc
+
+          a.cycle { |letter| print letter }
+
+          =>abcabcabcabcabcabcabcabc...
+        </code></pre>After iterating over each element of the collection, the method will reset and start from the beginning, hence the name, "cycle."
         </p>
         </section>
     </main>
@@ -94,7 +103,7 @@
         <tr>
         <td class="dropdown">
        <a href="enumerable-methods.html">
-        Enumerables: The #cycle Method
+        Enumerable: The #cycle Method
        </a>
       </td>
       </tr>

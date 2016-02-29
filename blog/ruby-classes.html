@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+    <title>Creating a Class</title>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">
+      <img class="image" src="../imgs/photo.png"/>
+      </a>
+      <h1>Blog</h1>
+    </header>
+    <main>
+      <h1>#5- Creating a Class</h1>
+      <h2>February 22, 2016</h2>
+      <section>
+      <h3>
+        What is a Class?
+      </h3>
+        <p>
+          A class is a template of attributes and behaviors that provides the framework for which an object is created. Objects of the same class have the same attributes and can also use the same methods defined within the class. Most likely, you'll have learned about methods in Ruby before classes. And, since everything in Ruby is an object, a good way to think of a class is as a physical blueprint. Within this blueprint is the basic layout of characteristics and functions that you can use to create any instance of this blueprint. In Ruby, the characteristics can be the attributes and the functions can be the methods. For example, let's make a class called <code>Car</code>. We'll give <code>Car</code> the basic attributes of <code>type</code> and <code>color</code>. For it's functions/methods, we'll give it <code>accelerate</code> and <code>brake</code>.
+        </p>
+        <img src="ruby-classes-imgs/input.png"/>
+        <p>
+          To define the new class, we wrote.<pre><code>class Car</code></pre> The first thing we do is <code>initialize</code> the object with the parameters we decided on: <code>(type, color)</code>. Because we initialize parameters, a new <code>Car</code> object will need those arguments. In this method, you see <code>@type</code> and <code>@color</code>. The <code>@</code> symbol denotes an instance variable. An instance variable is a variable that can be accessed in every instance of an object. In this case, if we wanted to, we can actually access our instance variables from our methods. You may have noticed the <pre><code>attr_accessor :type
+attr_accessor :color</code></pre> This method is the syntactic sugary combination of what are called <code>reader</code> and <code>writer</code> methods. These replace the need to define a method to read or write a whole method. So, if you wanted to only be able to read the <code>@type</code>, you would write:<pre><code>attr_reader :type</pre> If you wanted to only edit the instance variable, you would write:<pre><code>attr_writer :type</pre> The colon(:) next to the variable name makes it a symbol, which links it to the instance variable we have in the initialization.
+        </p>
+        <img src="ruby-classes-imgs/output.png"/>
+        <p>
+          Now we create an <code>Car</code> object and call it <code>Hummer</code>. Notice how we can use <code>.type</code> and <code>.color</code> to access the type and color of the car. Since we used <code>attr_accessor</code>, we can also write. If we want to change the color to pink, we can do this:<pre><code>me:> Hummer.color('pink')</code></pre> to get<pre><code>=> 'pink'</code></pre>
+        </p>
+        </section>
+    </main>
+    <aside>
+      <table>
+          <thead>
+            <tr>
+              <th>
+                <a href="../index.html">About Me</a>
+              </th>
+          </thead>
+          <tbody>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="../about_me/projects.html">Projects</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="../about_me/resume.html">Resume</a>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+        <th>
+          <a href="/../contact_me/contact_me.html">Contact Me</a>
+        </th>
+        </tr>
+      </thead>
+      </table>
+      <table>
+        <thead>
+        <tr>
+        <th>
+          <a href="blog_index.html">Blog</a>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td class="dropdown">
+        <a href="/blog/git.html">
+        Version Control: Git and Github
+        </a>
+        </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="css-concepts.html">
+        Display: Inline vs. Inline-block
+        </a>
+        </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="arrays-hashes.html">
+        Container Objects: Arrays and Hashes
+       </a>
+      </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="enumerable-methods.html">
+        Enumerable: The #cycle Method
+       </a>
+      </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+       <a href="ruby-classes.html">
+        Creating a Class
+       </a>
+      </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+        <a href="#">
+        #6
+        </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+       <a href="#">
+        #7
+       </a>
+      </td>
+      </tr>
+    </tbody>
+    </table>
+  </aside>
+  <footer>
+      <a href="https://www.facebook.com/joseph.seo.33">
+      <img class="facebook" src="../imgs/facebook.png"/>
+    </a>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+    <title>Ruby's Got Class</title>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">
+      <img class="image" src="../imgs/photo.png"/>
+      </a>
+      <h1>Blog</h1>
+    </header>
+    <main>
+      <h1>#5- Ruby's Got Class</h1>
+      <h2>February 22, 2016</h2>
+      <section>
+        <p>
+          Ruby's my first. She's pretty and well-spoken. Most importantly, she has class. But, the badboy in me craves more danger, more consequences. Oooh...consequences. My friends at Dev Bootcamp eventually introduce me to a fox named JS, or JavaScript(no, not the actress). Like any interested man, I read about her in a book written by a guy who's been following her for years.
+        </p>
+        <p>
+          I've been with JS for a week now. She speaks a different language than Ruby, but it isn't too difficult understanding her because, like Ruby, JS speaks with objects. Every action and characteristic is an object for them. So, what's so different between them besides syntax? JS can sometimes be a little too liberal for my own good. For example:<pre><code>console.log("8" - 2)
+   -> 6
+console.log("8" + 2)
+   -> 82</code></pre>While Ruby just wouldn't let me add or subtract a string and integer, JavaScript automatically converts the data types to try to make them work. In our first case, "8" is converted to the integer 8 to make <code>8 - 2</code> equate to 6. But, in the next example, the 2 is converted into "2," making <code>"8" + "2"</code> concatenate to "82." So, I'm left asking...
+        </p>
+        <h3>Where's Her Class?</h3>
+        <p>
+          Ruby comes from a place where Class defines how one behaves. Class is what's called a  'metaobject,' or object that defines objects. Remember that both Ruby and JS speak in objects. Where JS comes from, however, they don't have Class titles. This slight difference in organization represents why JS has more freedom but also more problems, and why Ruby's structure can bring convenience.
+        </p>
+        <h3>Different Name, Same-ish Game</h3>
+        <p>
+          Ruby's metaobject is the Class object. New instances call their methods through Ruby's method of inheritence, which allows instances to 'call' on the methods of the class rather than having to create their own versions of the methods. JavaScript has two metaobjects: The 'constructor' function object and the 'prototype' object. Their purposes individually align with the general purpose of a metaobject. But, to emulate a Ruby class, both the constructor function and the prototype property are required. The problem with defining methods in a constructor function alone is the inefficiency caused by each instance's redeclaration of the constructor's methods. The prototype property allows for inheritence directly from the constructor rather than redeclaration in each instance. Because methods are inherited in this way, the prototype property can also define what is basically a class method from outside of the constructor.
+        </p>
+        </section>
+    </main>
+    <aside>
+      <table>
+          <thead>
+            <tr>
+              <th>
+                <a href="../index.html">About Me</a>
+              </th>
+          </thead>
+          <tbody>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="../about_me/projects.html">Projects</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="../about_me/resume.html">Resume</a>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+        <th>
+          <a href="/../contact_me/contact_me.html">Contact Me</a>
+        </th>
+        </tr>
+      </thead>
+      </table>
+      <table>
+        <thead>
+        <tr>
+        <th>
+          <a href="blog_index.html">Blog</a>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td class="dropdown">
+        <a href="/blog/git.html">
+        Version Control: Git and Github
+        </a>
+        </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="css-concepts.html">
+        Display: Inline vs. Inline-block
+        </a>
+        </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="arrays-hashes.html">
+        Container Objects: Arrays and Hashes
+       </a>
+      </td>
+        </tr>
+        <tr>
+        <td class="dropdown">
+       <a href="enumerable-methods.html">
+        Enumerable: The #cycle Method
+       </a>
+      </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+       <a href="ruby-classes.html">
+        Classes: A Quickstarter
+       </a>
+      </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+        <a href="JavaScript.html">
+        Ruby's Got Class
+        </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="dropdown">
+       <a href="#">
+        #7
+       </a>
+      </td>
+      </tr>
+    </tbody>
+    </table>
+  </aside>
+  <footer>
+      <a href="https://www.facebook.com/joseph.seo.33">
+      <img class="facebook" src="../imgs/facebook.png"/>
+    </a>
+    </footer>
+    </body>
+</html>

@@ -43,7 +43,6 @@ html {
 header h1 {
   text-align: center;
   margin-top: 0px;
-  margin-bottom:
 }
 
 a:link {
@@ -85,4 +84,11 @@ th {
 
 .dropdown {
   border-radius: 10px;
+}
+
+#canvas {
+  width: 75%;
+  height: 75%;
+  background-image: url("../imgs/pongBG.png");
+  margin: auto;
 }

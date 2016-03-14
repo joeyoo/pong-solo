@@ -13,21 +13,20 @@ table {
   width: 300px;
 }
 
+.dropdown {
+  border-radius: 5px;
+}
+
 td {
   text-align: center;
   width: 100px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #e5eeff;
+  background-color: #ccfff3;
 }
 
 td a {
   text-decoration: none;
-}
-
-th a {
-  text-decoration: none;
-  color: black;
 }
 
 section {
@@ -36,17 +35,22 @@ section {
 
 html {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  color: black;
   background-color: white;
+  color:black;
+}
+
+th a {
+  text-decoration: none;
+  color: white;
 }
 
 header h1 {
   text-align: center;
   margin-top: 0px;
-}
-
-a:link {
-  color: black;
+  background-color: #262626;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 5px;
 }
 
 a:visited {
@@ -67,7 +71,6 @@ footer {
 .about-me {
   margin-left: 300px;
   margin-right: 300px;
-  background-color: #e5eeff;
   padding-top: -25px;
   margin-top: 20px;
 }
@@ -78,12 +81,8 @@ footer {
 }
 
 th {
-  background-color: #b3ccff;
-  border-radius: 10px;
-}
-
-.dropdown {
-  border-radius: 10px;
+  background-color: #99ffe7;
+  border-radius: 5px;
 }
 
 #canvas {
@@ -91,4 +90,18 @@ th {
   height: 75%;
   background-image: url("../imgs/pongBG.png");
   margin: auto;
+}
+
+pre code {
+  background-color: white;
+  text-align: left;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.sql-head {
+  background-color: #262626;
+  color: white;
 }

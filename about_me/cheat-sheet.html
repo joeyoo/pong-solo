@@ -10,11 +10,65 @@
       <a href="../index.html">
       <img class="image" src="../imgs/photo.png"/>
       </a>
-      <h1>CHEAT SHEET: JAVASCRIPT OBJECTS</h1>
+      <h1 class="page-head">SQL CHEAT SHEET</h1>
     </header>
     <main>
       <section>
-
+        <h2 class="sql-head">SELECT</h2>
+        <p>Used to select the desired data</p>
+        <pre><code>SELECT column_name, column_name
+FROM table_name;</code></pre>
+        <p>To return the whole table...</p>
+        <pre><code>SELECT * FROM table_name;</code></pre>
+        <h2 class="sql-head">WHERE</h2>
+        <p>Returns the corresponding data based on a given value</p>
+        <pre><code>SELECT column_name, column_name
+FROM table_name
+WHERE column_name operator value;</code></pre>
+        <h2 class="sql-head">ORDER BY</h2>
+        <p>Returns values with the ability to sort columns in ascending or descending order.</p>
+        <pre><code>SELECT column_name, column_name
+FROM table_name
+ORDER BY column_name ASC|DESC, column_name ASC|DESC;</code></pre>
+        <h2 class="sql-head">LIKE</h2>
+        <p>Used in conjunction with Where to essentially do the same thing.</p>
+        <pre><code>SELECT column_name(s)
+FROM table_name
+WHERE column_name LIKE pattern;</code></pre>
+        <h2 class="sql-head">UPDATE</h2>
+        <p>Updates the table</p>
+        <pre><code>UPDATE table_name
+SET column1=value1,column2=value2,...
+WHERE some_column=some_value;</code></pre>
+        <h2 class="sql-head">DELETE</h2>
+        <p>Deletes rows of the table</p>
+        <pre><code>DELETE FROM table_name
+WHERE some_column=some_value;</code></pre>
+        <h2 class="sql-head">CREATE TABLE</h2>
+        <p>Create a table by specifying column_name, data_type, and size parameter.</p>
+        <pre><code>CREATE TABLE table_name
+(
+column_name1 data_type(size),
+column_name2 data_type(size),
+column_name3 data_type(size),
+....
+);</code></pre>
+        <h2 class="sql-head">DISTINCT</h2>
+        <p>Distinct returns values that only have one instance.</p>
+        <pre><code>SELECT DISTINCT column_name,column_name
+FROM table_name;</code></pre>
+        <h2 class="sql-head">INNER JOIN</h2>
+        <p>Inner Join will return every row from both tables but only if the compared columns are the same. You'll most likely use this when dealing with primary and foreign keys.</p>
+        <pre><code>SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name=table2.column_name;</code></pre>
+        <p>Join, in the example below, is the same exact thing as Inner Join.</p>
+        <pre><code>SELECT column_name(s)
+FROM table1
+JOIN table2
+ON table1.column_name=table2.column_name;</code></pre>
+        <p><a href="http://www.w3schools.com/sql/default.asp">I use this source</a></p>
       </section>
     </main>
     <aside>

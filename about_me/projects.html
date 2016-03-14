@@ -14,220 +14,32 @@
     </header>
     <main>
       <section>
+      <a href="game.html">
       <h1>PONG SOLO</h1>
-      <canvas id="canvas"></canvas>
-      <p>
-        For my DBC project, I made a Pong-inspired game for the loner. The paddle's top-half deflects the ball up. The bottom half does the opposite.
-      </p>
-        <script>
-
-// Using canvas tag in HTML
-var canvas = document.getElementById("canvas");
-var tool = canvas.getContext("2d");
-
-// BALL/PADDLE SIZES
-var ballRadius = 2;
-var paddleHeight = 32, paddleWidth = 4;
-
-// BALL/PADDLE POSITIONS
-var paddlePosition = (canvas.height-paddleHeight)/2;
-var x = 0, y = 10; //initial ball position
-var vxI = 2, vyI = 1; //initial velocity(w/setInterval)
-var vx = vxI, vy = vyI; //ball velocity(w/setInterval)
-
-// SCORE KEEPER VARIABLES
-var score = 0;
-var highScore = localStorage.getItem("highScore");
-
-// USER KEY ACTION LISTENERS
-var upKey = false, downKey = false;
-document.addEventListener("keydown", press);
-document.addEventListener("keyup", release);
-function press() {
-  if (event.keyCode == 40) {
-    downKey = true;
-    event.preventDefault();
-  }
-  else if (event.keyCode == 38) {
-    upKey = true;
-    event.preventDefault();
-  }
-}
-function release() {
-  if (event.keyCode == 40) {downKey = false}
-  else if (event.keyCode == 38) {upKey = false}
-}
-
-// DRAWING FUNCTIONS
-var gameObjects = {
-  drawBall: function() {
-    tool.beginPath();
-    tool.arc(x, y, ballRadius, 0, Math.PI*2);
-    tool.fillStyle = "white";
-    tool.fill();
-    tool.closePath();
-  }
-,
-  paddleBottom: function() {
-    tool.beginPath();
-    tool.fillRect((canvas.width-paddleWidth)/2, paddlePosition, paddleWidth, paddleHeight/2);
-    tool.fillStyle = "white";
-    tool.closePath();
-  }
-,
-  paddleTop: function() {
-    tool.beginPath();
-    tool.fillRect((canvas.width-paddleWidth)/2, paddlePosition+(paddleHeight/2), paddleWidth, paddleHeight/2);
-    tool.fillStyle = "#00ccff";
-    tool.closePath();
-  }
-,
-  drawScore: function() {
-    tool.font = "15px Verdana";
-    tool.fillStyle = "#00ccff";
-    tool.fillText("SCORE: " + score, 6, 17);
-  }
-,
-  drawHighScore: function() {
-    tool.font = "15px Verdana";
-    tool.fillStyle = "#00ccff";
-    tool.fillText("BEST: "+ highScore, 210, 17);
-  }
-,
-  lineOfDeath: function() {
-    tool.beginPath();
-    tool.moveTo(canvas.width/2, 0);
-    tool.lineTo(canvas.width/2, canvas.height);
-    tool.strokeStyle="red";
-    tool.stroke();
-    tool.closePath();
-  }
-,
-  whiteLine: function() {
-    tool.beginPath();
-    tool.moveTo(0, canvas.height/2);
-    tool.lineTo(canvas.width, canvas.height/2);
-    tool.strokeStyle="white";
-    tool.stroke();
-    tool.closePath();
-  }
-,
-  draw: function() {
-    tool.clearRect(0, 0, canvas.width, canvas.height);
-    gameObjects.drawScore();
-    gameObjects.drawHighScore();
-    gameObjects.whiteLine();
-    gameObjects.lineOfDeath();
-    gameObjects.drawBall();
-    gameObjects.paddleTop();
-    gameObjects.paddleBottom();
-
-    // Teleports ball to oppposite side
-    if (x == canvas.width - vx && vx == vxI) {x = 0}
-    else if (x == -vx && vx == -vxI) {x = canvas.width}
-    else if (y + vy > canvas.height - ballRadius || y + vy < ballRadius) {vy = -vy}
-
-    // Ball coming from the left side
-    if (vx == vxI && x + vx > (canvas.width/2)-(paddleWidth/2) - ballRadius && x < canvas.width/2) { // checks if ball 'hits' paddle
-      if (y > paddlePosition && y < paddlePosition+paddleHeight) {
-        if (y < (paddlePosition)+paddleHeight/2) {vy = -vyI*1.3}
-        else if (y > (paddlePosition)+paddleHeight/2) {vy = vyI*1.2}
-        vx = -vx;
-        score ++;
-      }
-    }
-    // Ball coming from the right side
-    if (vx == -vxI && x + vx < (canvas.width/2) + (paddleWidth/2) + ballRadius && x > canvas.width/2) { // checks if ball 'hits' paddle
-      if (y > paddlePosition && y < paddlePosition+paddleHeight) {
-        if (y < (paddlePosition)+paddleHeight/2) {vy = -vyI*1.3}
-        else if (y > (paddlePosition)+paddleHeight/2) {vy = vyI*1.2}
-        vx = -vx;
-        score ++;
-      }
-    }
-
-    if (score > highScore) {
-        localStorage.setItem("highScore", score);
-      }
-
-    if (x == canvas.width/2) {
-      document.location.reload(false);
-    }
-
-    // controls paddle speed
-    if (upKey && paddlePosition > 0) {
-      paddlePosition -= 2;
-    }
-    else if (downKey && paddlePosition < canvas.height - paddleHeight) {
-      paddlePosition += 2;
-    }
-
-    x += vx;
-    y += vy;
-  }
-}
-
-var startScreen = {
-  pong: function() {
-    tool.beginPath();
-    tool.font = "35px Verdana";
-    tool.fillStyle = "white";
-    tool.fillText("PONG", 13, 80);
-    tool.closePath();
-  }
-,
-  solo: function() {
-    tool.beginPath();
-    tool.font = "20px Verdana";
-    tool.fillStyle = "yellow";
-    tool.fillText("solo(click to play)", 115, 80);
-    tool.closePath();
-  }
-,
-  best: function() {
-    tool.beginPath();
-    tool.font = "15px Verdana";
-    tool.fillStyle = "#00ccff";
-    tool.fillText("HIGH SCORE: "+highScore, 80, 120);
-    tool.closePath();
-  }
-,
-  draw: function() {
-    startScreen.pong();
-    startScreen.solo();
-    startScreen.best();
-  }
-}
-
-setTimeout(startScreen.draw)
-canvas.onclick = startGame;
-function startGame() {
-  setInterval(gameObjects.draw, 10);
-}
-
-        </script>
-
-
+      </a>
+      <p>Pong for the loner</p>
+      <a href="cheat-sheet.html">
+      <h1>CHEAT SHEET</h1>
+      </a>
+      <p>JavaScript Objects</p>
       </section>
     </main>
     <aside>
       <table>
           <thead>
-            <tr>
               <th>
-                <a href="../index.html">About Me</a>
+                <a href="projects.html">Projects</a>
               </th>
           </thead>
           <tbody>
-            </tr>
             <tr>
               <td class="dropdown">
-                <a href="projects.html">Projects</a>
+                <a href="game.html">Pong Solo</a>
               </td>
             </tr>
             <tr>
               <td class="dropdown">
-                <a href="resume.html">Resume</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
               </td>
             </tr>
           </tbody>
@@ -236,10 +48,22 @@ function startGame() {
         <thead>
           <tr>
         <th>
-          <a href="../contact_me/contact_me.html">Contact Me</a>
+          <a href="../index.html">About Me</a>
         </th>
         </tr>
       </thead>
+      <tbody>
+            <tr>
+              <td class="dropdown">
+                <a href="../contact_me/contact_me.html">Contact Me</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="dropdown">
+                <a href="resume.html">Resume</a>
+              </td>
+            </tr>
+          </tbody>
       </table>
       <table>
         <thead>

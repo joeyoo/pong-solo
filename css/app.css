@@ -1,0 +1,11 @@
+#wrapper {
+  background: url("https://static.pexels.com/photos/86753/pexels-photo-86753.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+}
+
+#chef-fu-logo {
+  height: 1em;
+  width: 1em;
+  padding-bottom: 0.2em;
+}

@@ -1,0 +1,33 @@
+html {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.header {
+  text-align: center;
+}
+
+#container {
+  border: solid 5px black;
+  border-radius: 10px;
+  background-color: #f4ff81;
+  padding-bottom: 50px;
+  width: 80%;
+  margin: auto;
+}
+
+#screen-border {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  background-color: #b0bec5;
+  width: 75%;
+  margin: auto;
+}
+
+#canvas {
+  background-image: url('pongBG.png');
+  margin: auto;
+  display: block;
+  width: 70%;
+  border-radius: 5px;
+}

@@ -1,27 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
-    <title>Pong Solo</title>
-  </head>
-    <body>
-    <header>
-      <a href="../index.html">
-      <img class="image" src="../imgs/photo.png"/>
-      </a>
-      <h1>PONG SOLO</h1>
-    </header>
-    <main>
-      <section>
-      <p>Upkey/Downkey to move</p>
-      <canvas id="canvas"></canvas>
-      <p>
-        For my DBC project, I made a Pong-inspired game for the loner. The paddle's top-half deflects the ball up. The bottom half does the opposite.
-      </p>
-        <script>
-
-// Using canvas tag in HTML
 var canvas = document.getElementById("canvas");
 var tool = canvas.getContext("2d");
 
@@ -38,6 +14,10 @@ var vx = vxI, vy = vyI; //ball velocity(w/setInterval)
 // SCORE KEEPER VARIABLES
 var score = 0;
 var highScore = localStorage.getItem("highScore");
+
+if (!highScore) {
+  highScore = 0;
+};
 
 // USER KEY ACTION LISTENERS
 var upKey = false, downKey = false;
@@ -83,15 +63,15 @@ var gameObjects = {
   }
 ,
   drawScore: function() {
-    tool.font = "15px Verdana";
-    tool.fillStyle = "#00ccff";
+    tool.font = "12px 'Press Start 2P'";
+    tool.fillStyle = "yellow";
     tool.fillText("SCORE: " + score, 6, 17);
   }
 ,
   drawHighScore: function() {
-    tool.font = "15px Verdana";
-    tool.fillStyle = "#00ccff";
-    tool.fillText("BEST: "+ highScore, 210, 17);
+    tool.font = "12px 'Press Start 2P'";
+    tool.fillStyle = "yellow";
+    tool.fillText("BEST: "+ highScore, 185, 17);
   }
 ,
   lineOfDeath: function() {
@@ -147,8 +127,8 @@ var gameObjects = {
     }
 
     if (score > highScore) {
-        localStorage.setItem("highScore", score);
-      }
+      localStorage.setItem("highScore", score);
+    }
 
     if (x == canvas.width/2) {
       document.location.reload(false);
@@ -172,30 +152,34 @@ var startScreen = {
     tool.beginPath();
     tool.font = "35px Verdana";
     tool.fillStyle = "white";
-    tool.fillText("PONG", 13, 80);
+    tool.fillText("PONG SOLO", 41, 88);
     tool.closePath();
   }
 ,
-  solo: function() {
+  clickScreen: function() {
     tool.beginPath();
-    tool.font = "20px Verdana";
-    tool.fillStyle = "yellow";
-    tool.fillText("solo(click to play)", 115, 80);
+    tool.font = "18px Verdana";
+    tool.fillStyle = "#00ccff";
+    tool.fillText("(click screen to play)", 56, 140);
     tool.closePath();
   }
 ,
   best: function() {
     tool.beginPath();
     tool.font = "15px Verdana";
-    tool.fillStyle = "#00ccff";
-    tool.fillText("HIGH SCORE: "+highScore, 80, 120);
+    tool.fillStyle = "yellow";
+    tool.fillText("HIGH SCORE: "+highScore, 80, 20);
     tool.closePath();
   }
 ,
   draw: function() {
     startScreen.pong();
-    startScreen.solo();
+    gameObjects.lineOfDeath();
+    gameObjects.whiteLine();
+    startScreen.clickScreen();
     startScreen.best();
+    gameObjects.paddleTop();
+    gameObjects.paddleBottom();
   }
 }
 
@@ -203,119 +187,4 @@ setTimeout(startScreen.draw)
 canvas.onclick = startGame;
 function startGame() {
   setInterval(gameObjects.draw, 10);
-}
-
-        </script>
-
-
-      </section>
-    </main>
-    <aside>
-      <table>
-          <thead>
-              <th>
-                <a href="projects.html">Projects</a>
-              </th>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="dropdown">
-                <a href="game.html">Pong Solo</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="dropdown">
-                <a href="cheat-sheet.html">Cheat Sheet</a>
-              </td>
-            </tr>
-          </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-        <th>
-          <a href="../index.html">About Me</a>
-        </th>
-        </tr>
-      </thead>
-      <tbody>
-            <tr>
-              <td class="dropdown">
-                <a href="../contact_me/contact_me.html">Contact Me</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="dropdown">
-                <a href="resume.html">Resume</a>
-              </td>
-            </tr>
-          </tbody>
-      </table>
-      <table>
-        <thead>
-        <tr>
-        <th>
-          <a href="../blog/blog_index.html">Blog</a>
-        </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-        <td class="dropdown">
-        <a href="../blog/git.html">
-        Version Control: Git and Github
-        </a>
-        </td>
-        </tr>
-        <tr>
-        <td class="dropdown">
-       <a href="../blog/css-concepts.html">
-        Display: Inline vs. Inline-block
-        </a>
-        </td>
-        </tr>
-        <tr>
-        <td class="dropdown">
-       <a href="../blog/arrays-hashes.html">
-        Container Objects: Arrays and Hashes
-       </a>
-      </td>
-        </tr>
-        <tr>
-        <td class="dropdown">
-       <a href="../blog/enumerable-methods.html">
-        Enumerable: The #cycle Method
-       </a>
-      </td>
-      </tr>
-      <tr>
-        <td class="dropdown">
-       <a href="../blog/ruby-classes.html">
-        Classes: A Quickstarter
-       </a>
-      </td>
-      </tr>
-      <tr>
-        <td class="dropdown">
-        <a href="../blog/JavaScript.html">
-        Ruby's Got Class
-        </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="dropdown">
-       <a href="../blog/tech.html">
-        Ruby on Rails
-       </a>
-      </td>
-      </tr>
-    </tbody>
-    </table>
-  </aside>
-  <footer>
-      <a href="https://www.facebook.com/joseph.seo.33">
-      <img class="facebook" src="../imgs/facebook.png"/>
-    </a>
-    </footer>
-    </body>
-</html>
+};
